@@ -128,7 +128,6 @@ Imagina que tienes el siguiente conjunto de datos:
 | 8                | 5              | 1                              |
 | 2                | 8              | 0                              |
 
-## Paso 1: Importar las librerías necesarias
 
 ```python
 import numpy as np
@@ -172,7 +171,9 @@ b2 (coeficiente para Horas de sueño): Este es el coeficiente que multiplica las
 Los valores específicos de 𝑏0, 𝑏1 y 𝑏2 dependerán de los datos de entrenamiento y del ajuste del modelo. Aquí tienes un ejemplo de los posibles resultados:
 
 b0 (intersección): -1.5
+
 b1 (coeficiente para Horas de estudio): 0.8
+
 b2 (coeficiente para Horas de sueño): 0.3
 
 Estos valores indican cómo cada característica (horas de estudio y horas de sueño) afecta la probabilidad de que un estudiante apruebe el examen. El término de intersección 
