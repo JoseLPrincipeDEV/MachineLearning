@@ -28,7 +28,7 @@ Luego, aplica la función sigmoide a esta combinación lineal para obtener una p
 
 
 
-\[ \sigma(z) = \frac{1}{1 + e^{-z}} \]
+\[ sigma(z) = 1/(1 + e^(-z)) \]
 
 
 
