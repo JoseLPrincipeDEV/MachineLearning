@@ -115,6 +115,71 @@ El modelo de regresión logística utilizará estos datos para ajustar los coefi
 - Los coeficientes \( b_0 \), \( b_1 \) y \( b_2 \) no son aleatorios; se obtienen a través del proceso de entrenamiento del modelo.
 - Este proceso implica ajustar los coeficientes para minimizar la diferencia entre las predicciones del modelo y las etiquetas reales en los datos de entrenamiento.
 
+# Ejemplo Práctico de Regresión Logística
+
+## Conjunto de Datos
+
+Imagina que tienes el siguiente conjunto de datos:
+
+| Horas de estudio | Horas de sueño | Aprobado (1) / No aprobado (0) |
+|------------------|----------------|--------------------------------|
+| 5                | 7              | 1                              |
+| 3                | 6              | 0                              |
+| 8                | 5              | 1                              |
+| 2                | 8              | 0                              |
+
+## Paso 1: Importar las librerías necesarias
+
+```python
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+
+# Crear un DataFrame con los datos
+data = {
+    'Horas de estudio': [5, 3, 8, 2],
+    'Horas de sueño': [7, 6, 5, 8],
+    'Aprobado': [1, 0, 1, 0]
+}
+df = pd.DataFrame(data)
+
+# Separar las características (X) y la etiqueta (y)
+X = df[['Horas de estudio', 'Horas de sueño']]
+y = df['Aprobado']
+
+# Crear y entrenar el modelo
+model = LogisticRegression()
+model.fit(X, y)
+# Obtener los coeficientes
+b0 = model.intercept_[0]
+b1, b2 = model.coef_[0]
+
+print(f"b0 (intersección): {b0}")
+print(f"b1 (coeficiente para Horas de estudio): {b1}")
+print(f"b2 (coeficiente para Horas de sueño): {b2}")
+
+```
+
+##Resultados
+Después de ejecutar el código, obtendrás los siguientes valores para los coeficientes:
+
+b0 (intersección): Este es el término de intersección del modelo.
+
+b1 (coeficiente para Horas de estudio): Este es el coeficiente que multiplica las horas de estudio.
+
+b2 (coeficiente para Horas de sueño): Este es el coeficiente que multiplica las horas de sueño.
+
+Los valores específicos de 𝑏0, 𝑏1 y 𝑏2 dependerán de los datos de entrenamiento y del ajuste del modelo. Aquí tienes un ejemplo de los posibles resultados:
+
+b0 (intersección): -1.5
+b1 (coeficiente para Horas de estudio): 0.8
+b2 (coeficiente para Horas de sueño): 0.3
+
+Estos valores indican cómo cada característica (horas de estudio y horas de sueño) afecta la probabilidad de que un estudiante apruebe el examen. El término de intersección 
+𝑏
+0
+ ajusta la línea de decisión del modelo.
+
 ## Entropía Cruzada
 
 La entropía cruzada es una medida utilizada en aprendizaje automático y teoría de la información para cuantificar la diferencia entre dos distribuciones de probabilidad. En el contexto de los modelos de clasificación, se utiliza para evaluar qué tan bien las predicciones del modelo se alinean con las etiquetas reales.
